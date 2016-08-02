@@ -53,42 +53,56 @@ to be thought out for Neo4j.
 
 **Document Database:** 	A document-oriented database, or document store, is a computer program designed
 for storing, retrieving, and managing document-oriented information, also known as semi-structured data.
-[](https://en.wikipedia.org/wiki/Document-oriented_database)
 
-**Graph DataBase:**	In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store.[](https://en.wikipedia.org/wiki/Graph_database)
+[wikipedia](https://en.wikipedia.org/wiki/Document-oriented_database)
+
+**Graph DataBase:**	In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store.
+
+[wikipedia](https://en.wikipedia.org/wiki/Graph_database)
 
 **Graph Model:** 	A graphical model or probabilistic graphical model (PGM) is a probabilistic model for
 which a graph expresses the conditional dependence structure between random variables. They are commonly
-used in probability theory, statistics—particularly Bayesian statistics—and machine learning. [](https://en.wikipedia.org/wiki/Graphical_model)
+used in probability theory, statistics—particularly Bayesian statistics—and machine learning.
+[wikipedia](https://en.wikipedia.org/wiki/Graphical_model)
 
 **JSON:** 	JSON is an open-standard format that uses human-readable text to transmit data objects
 consisting of attribute–value pairs.
-[](https://en.wikipedia.org/wiki/JSON)
-[](http://www.json.org/)
+
+[wikipedia](https://en.wikipedia.org/wiki/JSON)
+
+[json.org](http://www.json.org/)
 
 **Linkurious:** 	Linkurious allows end users to visualize data in graphical databases. Linurious is most
 commonly linked up with Neo4j.
-[](http://linkurio.us/)
+
+[linkurio](http://linkurio.us/)
 
 **MongoDB:** 	MongoDB is a free and open-source cross-platform document-oriented database. Classified as a
 NoSQL database, MongoDB avoids the traditional table-based relational database structure in favor of
 JSON-like documents with dynamic schemas (MongoDB calls the format BSON), making the integration of data
 in certain types of applications easier and faster.
-[](https://en.wikipedia.org/wiki/MongoDB)
-[](https://www.mongodb.com/)
+
+[wikipedia](https://en.wikipedia.org/wiki/MongoDB)
+
+[mongodb](https://www.mongodb.com/)
 
 **Neo4j:**	Neo4j is a graph database management system developed by Neo Technology, Inc. Described by its
 developers as an ACID-compliant transactional database with native graph storage and processing, Neo4j is
 the most popular graph database according to db-engines.com.
-[](https://en.wikipedia.org/wiki/Neo4j)
-[](http://neo4j.com/)
+
+[wikipedia](https://en.wikipedia.org/wiki/Neo4j)
+
+[neo4j](http://neo4j.com/)
 
 **NOSQL:** 	A NoSQL (originally referring to "non SQL" or "non relational")[1] database provides a mechanism
-for storage and retrieval of data which is modeled in means other than the tabular relations used in relational databases.
-[](https://en.wikipedia.org/wiki/NoSQL)
+for storage and retrieval of data which is modeled in means other than the tabular relations used in 
+relational databases.
+
+[wikpedia](https://en.wikipedia.org/wiki/NoSQL)
 
 **Scraping:**	Web scraping (web harvesting or web data extraction) is a computer software technique of
 extracting information from websites. This is accomplished by either directly implementing the Hypertext
 Transfer Protocol (on which the Web is based), or embedding a web browser.
-[](https://en.wikipedia.org/wiki/Web_scraping)
+
+[wikipedia](https://en.wikipedia.org/wiki/Web_scraping)
 
