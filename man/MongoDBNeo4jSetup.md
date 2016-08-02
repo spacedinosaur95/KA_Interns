@@ -1,0 +1,131 @@
+MongoDB and Neo4j for the Unpriviledge
+================
+
+![](../images/mongodb.png)
+
+![](../images/neo4j.png)
+
+Setting up MongoDB
+------------------
+
+1.  Go download the .msi file from their website (<https://www.mongodb.com/download-center?jmp=nav#community>) . I picked the “Windows Server 2008 R2 64-bit and later, with SSL support” option and will be installing it on a windows 7 64 bit computer. Also, you should be able to get away with installing the version with out SSL support.
+
+2.  I needed admin rights to install it. So I had some one come and do that for me.
+
+3.  To run the daemon you need to navigate to:
+
+`cd “C:\program files\MongoDB\server\3.2\bin”`
+
+*Note: the directory may be different depending on the version.*
+
+1.  We now need to run the daemon: `mongod`
+
+2.  You should get an error like I did. The problem is, it is looking for a place to create the database but we don’t have permission to access the config file. In the error message it should say where it was looking. Use that location to create the folders.
+
+In my case it was looking in `“C:\data\db”` so I created those two folders and started the daemon again. It should work after that.
+
+1.  Congrats! MongoDB is now working. But if we want it to work with Neo4j, we have a little bit more to do. We need to create a replica set in MongoDB. Usually, we would do that through the config file, but we don’t have access to that. So every time we execute mongod.exe we need to pass it a parameter
+
+`mongod –replSet rs0`
+
+*Note: This must be done everytime you execute mongod and the rs0 is the name of the replica set.*
+
+1.  Since we have the daemon running lets run the console: `mongo`
+
+If it is the first time running this under the daemon with the replica set you will need to initialize it.
+
+`rs.initiate()`
+
+1.  You should now see the terminal turn into something like this:
+
+`rs0:PRIMARY>`
+
+On my first time, it looked something like this:
+
+`rs0:OTHER>`
+
+We want it to say primary, I am not sure how I got it to switch to primary. When I ran the following command it switched. So I hope you have the same luck.
+
+`rs0:OTHER> rs.status()` `rs0:PRIMARY>`
+
+1.  YAY! You should be ready. When you get to the point where you run the mongo-connector, leave this running.
+
+Setting up Neo4j
+----------------
+
+1.  Have some one with Admin access install it for you
+
+2.  Run the program and it will ask you where you want to create the database. I just made a file on the `C:\` drive.
+
+3.  Click start and you should be good!
+
+4.  Once its up and running, go to `http://localhost:7474/` and it will ask you to create a password. Create the password and remember it.
+
+Connecting MongoDB and Neo4j
+----------------------------
+
+Before we start, we are going to need three things:
+
+1.  Pip
+
+2.  Neo4j-doc-manager
+
+3.  Mongo-connector
+
+### Installing pip
+
+1.  Go to: (<https://bootstrap.pypa.io/get-pip.py>), If the website acts like it did for me. You should see a wall of text.
+
+Here is what to do with it
+
+-   view source (do not inspect element because it will add HTML elements like it’s a webpage).
+
+-   save page somewhere.
+
+-   Open the page in notepad++. Change the encoding from what ever it is to utf-8.
+
+-   Save it as get-pip.py not .html
+
+1.  Once you have the .py file, save it to the directory python is stored in
+
+2.  Navigate to the directory python and get-pip are in and run:
+
+`python get-pip.py`
+
+1.  Pip is installed
+
+### Installing neo4j-doc-manager
+
+1.  Stay in the python directory and run:
+
+`python –m pip install neo4j-doc-manager –pre`
+
+1.  All done
+
+### Installing Mongo-connector
+
+1.  Mongo connector comes with Anaconda3 in the `./scripts` directory. If you do not have anaconda, I am sure you can download anaconda or mongo-connector online.
+
+2.  To connect them navigate to the scripts directory in anaconda and execute:
+
+`mongo-connector –m localhost:27017 –t http://localhost:7474/db/data -d neo4j_doc_manager`
+
+If your console keeps throwing up errors about Neo4j being unauthorized, you should disable authentication. Go to: `C:\Users\ajbuchan\AppData\Roaming\Neo4j Community Edition\neo4j.conf`. Once there, change line 11 to `dbms.security.auth_enabled=false`. Then rerun the above command.
+
+If your console keeps coming up with random errors, especially: *‘Graph’ object has no attribute ‘cypher’*, you might have the wrong version of py2neo. In my case, py2neo 3 was installed with anaconda. I needed the py2neo 2.0.8
+
+`pip uninstall py2neo` `pip install py2neo==2.0.8`
+
+**Extra Info for Mongo-connector:**
+
+If you get the error: `object has no attribute ‘syntax error’`. It could mean a lot of things. What I have gathered from a day of research online. I means you’re screwed. For my instance, the only way to fix it was for me to use py2neo 3.0.0 but mongo-connector wouldn’t start unless I used version 2.0.8. So what I did was, I deleted both the mongo database and the neo4j database. But then I wasn’t getting any errors and it(mongo-connector) would just randomly close. To fix this you need to go into the `C:/anaconda3/scripts/oplog.timestamp` file and delete the contents and it should work after that.
+
+\*\*EXTRA <NOTES:**>
+
+`SET NEO4J_USERNAME=neo4j` `SET NEO4J_PASSWORD=MorganFreeman` `mongo-connector –m localhost:27017 –t http://localhost:7474/db/data -d neo4j_doc_manager`
+
+------------------------------------------------------------------------
+
+My console started throwing up errors. I believe it is because we never specified a username and password for neo4j. I read you can pass a username with –a and a password with –p, or you can set the environment variable NEO4J\_AUTH=user:pass but neither of those worked. logs show nothing
+
+If your console keeps throwing up errors about Neo4j being unauthorized. You can either turn authorization off in Neo4j or you can tell mongo-connector your user and password. Using –a and –p or –f is for authenticating MongoDB but we want to authenticate Neo4j. So, set the environment variables NEO4J\_USERNAME to the username and the NEO4J to the password

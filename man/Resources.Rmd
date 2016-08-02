@@ -1,0 +1,40 @@
+---
+title: "Useful Resources"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Resources
+
+[Disable Neo4j authentication copy.url](http://stackoverflow.com/questions/29096616/how-to-disable-basic-auth-on-neo4j-2-2-0-rc01)
+
+[Disable Neo4j authentication.url](http://stackoverflow.com/questions/29096616/how-to-disable-basic-auth-on-neo4j-2-2-0-rc01)
+
+[Documentation.url](http://lxml.de/api/lxml.etree._Element-class.html)
+
+[HTML Scraping.url](http://docs.python-guide.org/en/latest/scenarios/scrape/)
+
+[Mongo-Connector Authentication - Only for MongoDB.url](https://github.com/mongodb-labs/mongo-connector/wiki/Usage-with-Authentication)
+
+[Mongo-connector.url](https://github.com/mongodb-labs/mongo-connector/wiki/Configuration-Options)
+
+[mongodb and neo4j.url](https://neo4j.com/developer/mongodb/)
+
+[MongoDB Connector and Neo4j Doc Manager.url](https://neo4j.com/developer/neo4j-doc-manager/)
+
+[mongodb with python.url](http://stackoverflow.com/questions/22139173/how-to-connect-to-mongo-database-locally-using-python)
+
+[Neo4j Config Files.url](http://stackoverflow.com/questions/19520507/where-is-neo4j-server-properties-on-windows)
+
+[Possible useful HTML parsing page.url](http://stackoverflow.com/questions/9908503/fetching-data-using-python-lxml)
+
+[Py2Neo Documentation - includes authentication.url](http://py2neo.org/2.0/essentials.html#authentication)
+
+[RMongoDB Cheatsheet.url](https://cran.r-project.org/web/packages/rmongodb/vignettes/rmongodb_cheat_sheet.pdf)
+
+[RMongoDB documentation.url](https://cran.r-project.org/web/packages/rmongodb/rmongodb.pdf)
+
+[Topic Modeling in R.url](https://eight2late.wordpress.com/2015/09/29/a-gentle-introduction-to-topic-modeling-using-r/)

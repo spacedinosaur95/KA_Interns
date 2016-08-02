@@ -1,0 +1,43 @@
+---
+title: "Abstract - Buchanan Summer 2016"
+author: "Alec Buchanan"
+date: "July 25, 2016"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Showcasing MongoDB and Neo4j with ISS Experiment Information
+
+Both MongoDB and Neo4j are NoSQL databases (Not Only SQL). MongoDB is a powerful document database, 
+while Neo4j is a powerful graph database. Using these two technologies in unison, we are able to see 
+relationships between data that we would have never seen before. Right now, the technology is not very 
+well known and people do not understand what it is capable of. This is why David Meza and I have set out
+to look for ways to apply this new technology.
+	
+Because I am the only person working on this project, that means I am responsible for almost all aspects
+of the project. The first of my responsibilities is to setup the databases. This included a lot of 
+configuring and problem solving. The next aspect I was responsible for was coming up with a graph model.
+The graph model is a representation of how the data in the database is organized. It also shows how the
+data in the database relates to other data nodes in the database. My next responsibility was to write a 
+couple programs that would populate the databases. This included writing a scraper that would go to 
+NASA’s website and pull data from the site. It also included writing a program that would do topic 
+modeling on the information and create nodes appropriately.
+	
+This project is a perfect showcase of how powerful MongoDB and Neo4j can be when paired together. 
+Neo4j can show relationships that are otherwise hard to detect, and MongoDB makes for a quick way to 
+access a large set of data. This project can also serve as an interesting and interactive way for people
+to navigate the ISS experiments and results. As a result of this project, I have written plenty of 
+documentation on how to setup MongoDB, Neo4j and my programs I made. I also have a list of problems and
+errors along with their solutions.
+	
+This internship has had a huge impact on my career and development. Coming into this position, I had no 
+experience with NoSQL databases and have never heard of Neo4j or Linkurious. I was forced to learn quick
+and become a good problem solver. Within the first week I was already getting hands on experience with 
+some of these systems. This internship has been amazing from an educational stand point; it has also been
+great from a business stand point. I have really learned the importance of networking and communicating.
+I have gone across the hall and have had some exciting conversations with the flight operations people.
+I have also gone and visited building 20 and talked to the other S&MA people. Overall, this has been the
+most interesting and rewarding internship I have ever had.
