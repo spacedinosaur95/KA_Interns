@@ -1,0 +1,379 @@
+---
+title: "Shiny Dashboards Made Easy"
+author: "David Meza"
+date: "April 5, 2016"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, eval = FALSE)
+```
+
+## Installation
+
+shinydashboard requires Shiny 0.11 or above. To install, run:
+
+```{r install, eval=FALSE}
+install.packages("shinydashboard")
+```
+
+## Basics
+
+A dashboard has three parts: a header, a sidebar, and a body. Here’s the
+most minimal possible UI for a dashboard page.
+
+```{r basic, eval=FALSE}
+## ui.R ##
+library(shinydashboard)
+
+dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody()
+)
+```
+
+You can quickly view it at the R console by using the shinyApp() function.
+(You can also use this code as a single-file app).
+
+```{r}
+## app.R ##
+library(shiny)
+library(shinydashboard)
+
+ui <- dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody()
+)
+
+server <- function(input, output) { }
+
+shinyApp(ui, server)
+```
+
+Basic Dashboard:![](images/Basic1.png)
+
+## Add Content
+
+Obviously, this dashboard isn’t very useful. We’ll need to add components that
+actually do something. In the body we can add boxes that have content.
+
+```{r}
+## app.R ##
+library(shinydashboard)
+
+ui <- dashboardPage(
+  dashboardHeader(title = "Basic dashboard"),
+  dashboardSidebar(),
+  dashboardBody(
+    # Boxes need to be put in a row (or column)
+    fluidRow(
+      box(plotOutput("plot1", height = 250)),
+
+      box(
+        title = "Controls",
+        sliderInput("slider", "Number of observations:", 1, 100, 50)
+      )
+    )
+  )
+)
+
+server <- function(input, output) {
+  set.seed(122)
+  histdata <- rnorm(500)
+
+  output$plot1 <- renderPlot({
+    data <- histdata[seq_len(input$slider)]
+    hist(data)
+  })
+}
+
+shinyApp(ui, server)
+```
+
+Basic Dashboard Add Content:![](images/Basic2.png)
+
+## Add Sidebar
+
+Next, we can add content to the sidebar. For this example we’ll add menu items 
+that behave like tabs. These function similarly to Shiny’s tabPanels: when you 
+click on one menu item, it shows a different set of content in the main body.
+
+There are two parts that need to be done. First, you need to add menuItems to 
+the sidebar, with appropriate tabNames.
+
+In the body, add tabItems with corrsponding values for tabName:
+
+The default display, also shown when the “Dashboard” menu item is clicked:
+
+```{r}
+
+
+## app.R ##
+library(shinydashboard)
+
+ui <- dashboardPage(
+  dashboardHeader(title = "Basic dashboard"),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
+      menuItem("Widgets", tabName = "widgets", icon = icon("th"))
+    )
+  ),
+  dashboardBody(
+    tabItems(
+      # First tab content
+      tabItem(tabName = "dashboard",
+        fluidRow(
+          box(plotOutput("plot1", height = 250)),
+
+          box(
+            title = "Controls",
+            sliderInput("slider", "Number of observations:", 1, 100, 50)
+          )
+        )
+      ),
+
+      # Second tab content
+      tabItem(tabName = "widgets",
+        h2("Widgets tab content")
+      )
+    )
+  )
+)
+
+server <- function(input, output) {
+  set.seed(122)
+  histdata <- rnorm(500)
+
+  output$plot1 <- renderPlot({
+    data <- histdata[seq_len(input$slider)]
+    hist(data)
+  })
+}
+
+shinyApp(ui, server)
+```
+
+Basic Dashboard Tab 1:![](images/Basic3.png)
+
+Basic Dashboard Tab 2:![](images/Basic4.png)
+
+## Expanding Your Basic Dashboard
+
+As your analysis expands and you start to add separate tabs to  your dashboard,
+the amount of code in one `R` file can become unmanageable. 
+
+To alleviate this, it will become necessary to split your code into modules for each
+of your analysis. This allows for greater control and maintenance of your dashboard.
+Additionally, you will find it easier to debug errors in your code.
+
+To accomplish this, we first need to break up the basic dashboard into Spears files.
+The map below depicts how we break up the single dashboard file in seven.
+
+![](images/BasicshinyDashboard.png)
+
+```{r, eval=FALSE}
+## app.R ##
+## This is the starting point for the application
+## Run locally if in interactive session (for testing)
+if(interactive()) {
+     source("global.R")
+     source("ui.R")
+     source("server.R") ## function(input, out)
+     shinyApp(ui, server)
+}
+
+## global.R ##
+## DO NOT DELETE, NEEDED TO RUN DASHBOARD ##
+library(shiny)
+library(shinydashboard)
+############################################
+
+## Add Your packages here
+
+
+## Source - Place any functions you want accessible globally in the functions folder
+
+
+## Global variables - used across pages and apps
+
+## ui.R ##
+source("header.R")
+source("sidebar.R")
+source("body.R")
+
+ui <- dashboardPage(
+     header,
+     sidebar,
+     body
+)
+
+## header.R ##
+header <- dashboardHeader(title = "Exapnded Basic Dashboard", titleWidth = 500
+)
+
+## sidebar.R ##
+sidebar <- dashboardSidebar(sidebarMenu(
+     menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
+     menuItem("Widgets", tabName = "widgets", icon = icon("th"))
+     )
+)
+
+## body.R ##
+body <- dashboardBody(
+     tabItems(
+          # First tab content
+          tabItem(tabName = "dashboard",
+                  fluidRow(
+                       box(plotOutput("plot1", height = 250)),
+                       
+                       box(
+                            title = "Controls",
+                            sliderInput("slider", "Number of observations:", 1, 100, 50)
+                       )
+                  )
+          ),
+          
+          # Second tab content
+          tabItem(tabName = "widgets",
+                  h2("Widgets tab content")
+          )
+     )
+)
+
+## server.R ##     
+server <- function(input, output) {
+     set.seed(122)
+     histdata <- rnorm(500)
+     
+     output$plot1 <- renderPlot({
+          data <- histdata[seq_len(input$slider)]
+          hist(data)
+     })
+}
+```
+
+## Modular Dashboard
+
+Expanding that further, we now break up the **body.R** and **server.R** files. Separate
+folders or subApps are created for each tab in the dashboard containing their
+own **ui.r** and **server.R** file. **body.R** sources the **ui.R** and creates an object
+holding the dashboard body and tabItem created by the **ui.R** it sourced. 
+The main **server.R** file is now a function that sources the **server.R** file in the folder.
+
+![](images/dashboardMap.png)
+
+### Main body.r
+```{r, eval=FALSE}
+## Main body.R ##
+## Tab Items
+## Introduction-----------------------------------------
+source('intro/intro.r', local = TRUE)
+intro <- tabItem(tabName = "intro", intro.box)
+
+## Dashboard Boxes Example --------------------------------
+source('DBboxes/ui.R', local = TRUE)
+dbboxes <- tabItem(tabName = "dbboxes", dbboxes.box)
+
+## Dashboard ----------------------------------------------
+source('dashboard/ui.R', local = TRUE)
+dashboard <- tabItem(tabName = "dashboard", dashboard.box)
+
+## maps ------------------------------------------------
+source('maps/ui.R', local = TRUE)
+maps <- tabItem(tabName = "maps", maps.box)
+
+## Topic Modeling -------------------------------------
+source("LDAvis/ui.R", local = TRUE)
+lda <- tabItem(tabName = "lda", lda.box)
+
+## Acknowledgements ------------------------------------
+source('acknowledgements/acknowledgements.R', local = TRUE)
+ack <- tabItem(tabName = "ack", ack.box)
+
+
+body <- dashboardBody(
+     tabItems(
+          intro,
+          dbboxes,
+          dashboard,
+          maps,
+          lda,
+          ack
+     )
+)
+```
+
+### Main server.R
+
+```{r, eval=FALSE}
+## Main server.R ##
+server <- function(input, output, session) {
+     ## Introduction Tab
+     source("intro/intro.R", local = TRUE)
+     ## Dashboard Boxes
+     source("DBboxes/server.R", local = TRUE)
+     ## Dashboard Tab
+     source("dashboard/server.R", local = TRUE)
+     ## Maps Tab
+     source("maps/server.R", local = TRUE)
+     ## Topic Modeling LDA Tab
+     source("LDAvis/server.R", local = TRUE)
+     ## Acknowledgements
+     source("acknowledgements/acknowledgements.R", local = TRUE)
+}
+```
+
+### subApp ui.R
+
+```{r, eval=FALSE}
+## Example subApp ui.R ##
+maps.box <- fluidPage(
+     
+     leafletOutput("CODmap", width = "100%", height = 600),
+     DT::dataTableOutput("building_info")
+     
+)
+```
+
+### subApp server.R
+
+```{r, eval=FALSE}
+## Example subApp server.R ##
+## COD map server code
+JSC <- "Johnson Space Center"
+JSCcoords <- geocode("Johnson Space Center")
+JSCRealProperty <- readRDS("data/JSCRealProperty.rds")
+JSCBuildings <- filter(JSCRealProperty, !is.na(latitude))
+## Dummy Data to represent power usage
+over <- JSCBuildings[1:66, ]
+avearage <- JSCBuildings[67:132, ]
+low <- JSCBuildings[133:197, ]
+##-------------------------------
+
+JSCmap <- leaflet() %>% 
+     addTiles() %>% 
+     setView(JSCcoords[1], JSCcoords[2], zoom = 15) %>%  
+     addCircleMarkers(data = JSCBuildings, lng = ~ longitude, lat = ~ latitude, radius = (JSCBuildings$BookValue)/1000000, layerId = NULL, 
+                      group = "JSC Buildings", stroke = TRUE, color = "blue", weight = 5, opacity = 0.5, 
+                      fill = TRUE, fillColor = "blue", fillOpacity = 0.2, dashArray = NULL, 
+                      popup = paste(JSCBuildings$PropertyName, JSCBuildings$PriorYrOperating),
+                      options = pathOptions(), clusterOptions = NULL, clusterId = NULL)%>%
+     addCircleMarkers(data = over, lng = ~ longitude, lat = ~ latitude, group = "High Power", color = "red") %>% 
+     addCircleMarkers(data = avearage, lng = ~ longitude, lat = ~ latitude, group = "Avg. Power", color = "yellow") %>%
+     addCircleMarkers(data = low, lng = ~ longitude, lat = ~ latitude, group = "Low Power", color = "green") %>% 
+     hideGroup("High Power") %>% 
+     hideGroup("Avg. Power") %>% 
+     hideGroup("Low Power") %>% 
+     addLayersControl(baseGroups = "JSC Buildings", overlayGroups = c("High Power", "Avg. Power", "Low Power"),
+                      options = layersControlOptions(collapsed = FALSE))
+
+output$CODmap <- renderLeaflet(JSCmap)
+output$building_info <- renderDataTable(over)
+```
