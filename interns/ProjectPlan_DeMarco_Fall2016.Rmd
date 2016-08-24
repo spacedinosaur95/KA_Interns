@@ -1,0 +1,61 @@
+---
+title: "Project Plan - Rebecca DeMarco Fall 2016"
+author: "Rebecca DeMarco"
+date: "August 25, 2016"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**ISS Data Visualization Project Plan**  
+
+**USRA Intern: Rebecca DeMarco**  
+**School: Embry-Riddle Aeronautical University**  
+
+**JSC Directorate: Safety and Mission Assurance**  
+**Mentor: Julie Barnes**  
+**Co-Mentor: David Meza**  
+
+
+## Project Purpose and Description 
+
+The ISS Data Visualization Project supports NASA's goal of sending humans to Mars. Getting to Mars presents a variety of challenges to NASA. There are three phases in our journey to Mars that help manage these challenges. These phases are Earth Reliant, Proving Ground, and Earth Independent. The Earth Reliant phase focuses on research on the International Space Station that needs to be done in order to understand what is needed for deep space, long durations mission. This research will help us to safely get to Mars. The next phase in the Proving Ground. In this phase, things such as intergrated testing for Orion and SLS and an asteroid redirect mission will occur. This phase focuses on proving that we are able to complete operations in deep space. The final phase, Earth Independent, focuses on living on Mars.  
+
+The ISS Data Visualization Project falls under the first phase, Earth Reliant, in our journey to Mars. The objective of this project is to create a web application for end users to explore and visualize experiments conducted on the International Space Station. The web application will help end users to learn about the experiments conducted on the ISS. In the process of sharing the knowledge of the experiments conducted on the ISS, the end users will be informed about the importance and the value of the research conducted on the ISS. Since the research is also part of the journey to Mars, the end users will also be able to obtain an understanding of the importance of the research in our journey to Mars and the benefits of going to Mars. 
+
+## Project Goals 
+The project has three different types of goals: technical goals, project goals, and goals for the intern.  
+* Technical Goals 
+  
+* Project Goals 
+  
+* Goals for Intern 
+  + Learn MongoDB, Neo4j, and expand knowledge on R 
+
+## Steps for Accomplishing Goals 
+
+This project wil be managed in 6 major phases. 
+
+1. Replicating phase
+  + Since this is an ongoing project, I need to replicate the work that the previous intern did. (setting up the databases and cloning the work from GitHub)
+  + This also involves reading documentation and learning MongoDB, Neo4j, and R.
+2. User Story Elicitation Phase
+  + find out what functionality the product owners want the web application to perform
+3. Design Phase
+  + Using human factors methods, design the first iteration of the user interface.
+4. Design and Code Phase
+  + Once the majority of the UI is designed, start coding the basic
+5. Design Freeze and Code Phase
+  + Freeze the design and only work on the code
+6. Final Demonstration Phase
+  + Focuses on deploying a working iteration of the product
+  + Finishing up documentation for the project
+  
+
+## Project Schedule and Core Hours 
+
+The core hours of my organization are from 9am to 3pm. My mentor and co-mentor usually work between 8am and 6pm, so I will reflect those hours. Since interns have to make up the hours missed for holidays off, my schedule will fluxuate to accomadate making up the hours. Due to the additional hours, mentor liasons have been set up for when my mentors are not here. This fall there are 4 holidays that interns will have to make up. See schedule below for the approximate hours per week and estimated milestone dates. 
+
+## Expected Outcomes 
