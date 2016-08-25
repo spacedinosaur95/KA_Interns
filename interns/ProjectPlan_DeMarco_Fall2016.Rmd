@@ -28,11 +28,19 @@ The ISS Data Visualization Project falls under the first phase, Earth Reliant, i
 ## Project Goals 
 The project has three different types of goals: technical goals, project goals, and goals for the intern.  
 * Technical Goals 
+  + Build upon the work of the previous intern
+  + Connect to Neo4j in the Shiny application 
+  + Document User Stories 
+  + Document Design 
   
 * Project Goals 
+  + Communicate to end users the benefits of the research done on the ISS 
+  + Communicate to end users why the research on the ISS is necessary for the journey to Mars 
+  + Communicate to end users why sending humans to Mars is important 
   
 * Goals for Intern 
   + Learn MongoDB, Neo4j, and expand knowledge on R 
+  + Write technical paper as a deliverable for USRA and Embry-Riddle
 
 ## Steps for Accomplishing Goals 
 
@@ -58,4 +66,24 @@ This project wil be managed in 6 major phases.
 
 The core hours of my organization are from 9am to 3pm. My mentor and co-mentor usually work between 8am and 6pm, so I will reflect those hours. Since interns have to make up the hours missed for holidays off, my schedule will fluxuate to accomadate making up the hours. Due to the additional hours, mentor liasons have been set up for when my mentors are not here. This fall there are 4 holidays that interns will have to make up. See schedule below for the approximate hours per week and estimated milestone dates. 
 
+Week/Dates | Hours Worked| Phase
+-----------|-------------|------------------------
+1/Aug22-26 | 46/46       | Replicating 
+2/Aug29-2  | 47.5/93.5   | Replicating/User Story
+3/Sep6-8   | 30/123.5    | User Story/Design
+4/Sep12-16 | 47.5/171    | Design
+5/Sep19-22 | 38/209      | Design/Code
+6/Sep26-30 | 47.5/256.5  | Design/Code 
+7/Oct3-6   | 38/294.5    | Design/Code
+8/Oct11-14 | 38/332.5    | Design/Code
+9/Oct17-20 | 38/370.5    | Design/Code
+10/Oct24-28| 47.5/418    | Design/Code
+11/Oct31-3 | 38/456      | Design/Code
+12/Nov7-10 | 36/492      | Freeze/Code
+13/Nov14-17| 36/528      | Code 
+14/Nov21-25| 36/564      | Code
+15/Nov28-1 | 36/600      | Final Demo
+16/Dec5-9  | 40/640      | Final Demo
+
 ## Expected Outcomes 
+This project is a continuous project and it is not expected that the product be fully produced, but rather a working iteration of the web application to be created. 
