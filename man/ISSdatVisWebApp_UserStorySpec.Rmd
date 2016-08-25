@@ -1,0 +1,52 @@
+---
+title: "User Story Specification Document"
+author: "Rebecca DeMarco"
+date: "August 25, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**International Space Station Data Visualization Web Application**
+**User Story Specification**
+
+
+###1.0 Introduction 
+
+#### 1.1 Purpose 
+The purpose of the web application is for end users to explore and visualize the experiments conducted on International Space Station. The application will utilize data visualization
+
+* The web application will communicate to end users: 
+    + The benefits of the research done on the ISS 
+    + Why the research on the ISS is necessary for the journey to Mars 
+    + Why sending humans to Mars is important 
+    
+The web application will communicate the above mentioned points primarily through data visualization. The primary purpose of this application is that it looks 
+
+#### 1.2 Product Perspective 
+
+#### 1.3 Document Conventions 
+User stories and acceptance criteria 
+
+#### 1.4 Intended Auidience and Reading Suggestions 
+
+
+#### 1.5 User Classes and Characteristics 
+There are two different types of users for this web application. 
+    + Stakeholders: people who need to know the value they are getting from funding the research to happen on the ISS 
+    + NASA Employees: people who want to explore the data of the research that has happened on the ISS for the purpose of 
+    + General Public: educating the public, both children and adults, on 
+
+#### 1.6 User Documentation 
+
+### 2.0 Assumptions and Dependencies 
+
+### 3.0 System Features
+
+#### 3.1 System Feature 1 
+
+Story # | User Story                   | Acceptance Criteria      
+--------|------------------------------|------------------------------
+abc     | abc                          | abc 
