@@ -1,0 +1,66 @@
+---
+title: "Verification Test Document"
+author: "Rebecca DeMarco"
+date: "August 25, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**International Space Station Data Visualization Web Application Project Test Document**  
+
+## Introduction 
+
+### Document Purpose 
+The purpose of this document is to capture testing that verifies that the product meets the acceptance criteria for all of the user stories. For further verification and validation, consider looking at the International Space Station Data Visualization Web Application Project Verification and Validation Document. 
+
+### Document Conventions 
+Test logs for the ISS Data Visualization Web Application Project are categorized by epic. The test log for each epic is comprised of individual test logs for each story. 
+
+* Every test log contains the following information: 
+    + Date/Time: The date and time that the test was conducted 
+    + Story/Acceptance Criteria: The user story number and the acceptance criteria for that user story 
+    + Inputs: The inputs needed to make the function happen (i.e click on button labeled xyz)
+    + Expected Outcome: The intended behaviour of the function that is supposed to happen 
+    + Pass/Fail: If the test passed or failed. If the test failed, a description as to why the test failed should be indicated. 
+
+
+## Test Logs 
+
+### Epic 1 Test Log 
+
+#### Epic 1: User Story #
+
+Date/Time | Story/Acceptance Criteria | Inputs      | Expected Outcome | Pass/Fail 
+----------|---------------------------|-------------|------------------|-----------
+00/00/0000| ABC                       | mouse click | shows data       | NA
+
+#### Epic 1: User Story # 
+Date/Time | Story/Acceptance Criteria | Inputs      | Expected Outcome | Pass/Fail 
+----------|---------------------------|-------------|------------------|-----------
+00/00/0000| ABC                       | mouse click | shows data       | NA
+
+#### Epic 1: User Story # 
+Date/Time | Story/Acceptance Criteria | Inputs      | Expected Outcome | Pass/Fail 
+----------|---------------------------|-------------|------------------|-----------
+00/00/0000| ABC                       | mouse click | shows data       | NA
+
+### Epic 2 Test Log 
+
+#### Epic 2: User Story #
+
+Date/Time | Story/Acceptance Criteria | Inputs      | Expected Outcome | Pass/Fail 
+----------|---------------------------|-------------|------------------|-----------
+00/00/0000| ABC                       | mouse click | shows data       | NA
+
+#### Epic 2: User Story # 
+Date/Time | Story/Acceptance Criteria | Inputs      | Expected Outcome | Pass/Fail 
+----------|---------------------------|-------------|------------------|-----------
+00/00/0000| ABC                       | mouse click | shows data       | NA
+
+#### Epic 2: User Story # 
+Date/Time | Story/Acceptance Criteria | Inputs      | Expected Outcome | Pass/Fail 
+----------|---------------------------|-------------|------------------|-----------
+00/00/0000| ABC                       | mouse click | shows data       | NA
