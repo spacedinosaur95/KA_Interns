@@ -23,7 +23,7 @@ Test logs for the ISS Data Visualization Web Application Project are categorized
     + Date/Time: The date and time that the test was conducted 
     + Story/Acceptance Criteria: The user story number and the acceptance criteria for that user story 
     + Inputs: The inputs needed to make the function happen (i.e click on button labeled xyz)
-    + Expected Outcome: The intended behaviour of the function that is supposed to happen 
+    + Expected Outcome: The intended behavior of the function that is supposed to happen 
     + Pass/Fail: If the test passed or failed. If the test failed, a description as to why the test failed should be indicated. 
 
 
