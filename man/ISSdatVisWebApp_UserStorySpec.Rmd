@@ -12,8 +12,14 @@ knitr::opts_chunk$set(echo = TRUE)
 **International Space Station Data Visualization Web Application**
 **User Story Specification**
 
+### Revision History 
+Date      | Version | Description       | Author 
+----------|---------|-------------------|----------------
+8/25/2016 | draft   | Establishing draft| Rebecca DeMarco 
+8/26/2016 | draft   | Editing draft     | Rebecca DeMarco 
 
-###1.0 Introduction 
+
+### 1.0 Introduction 
 
 #### 1.1 Purpose 
 The purpose of the web application is for end users to explore and visualize the experiments conducted on International Space Station. The application will utilize data visualization
@@ -22,30 +28,36 @@ The purpose of the web application is for end users to explore and visualize the
     + The benefits of the research done on the ISS 
     + Why the research on the ISS is necessary for the journey to Mars 
     + Why sending humans to Mars is important 
-    
-The web application will communicate the above mentioned points primarily through data visualization. The primary purpose of this application is that it looks 
 
 #### 1.2 Product Perspective 
+This product is being built upon the work of an already existing product.
 
 #### 1.3 Document Conventions 
-User stories and acceptance criteria 
+User stories and acceptance criteria for each of the epics (product features) are listed 
 
-#### 1.4 Intended Auidience and Reading Suggestions 
+Story #      | User Story                   | Acceptance Criteria      
+-------------|------------------------------|------------------------------
+User Story # | description of a functional need| the criteria that must be met to complete the user story
 
+#### 1.4 Intended Auidience 
 
-#### 1.5 User Classes and Characteristics 
-There are two different types of users for this web application. 
-    + Stakeholders: people who need to know the value they are getting from funding the research to happen on the ISS 
-    + NASA Employees: people who want to explore the data of the research that has happened on the ISS for the purpose of 
-    + General Public: educating the public, both children and adults, on 
+### 2.0 End Users 
+This section of the User Story Specification document discusses aspects of the end users. This is so the reader can gain context of for whom the web application is being designed for.  
 
-#### 1.6 User Documentation 
+#### 2.1 User Classes and Characteristics 
+* There are three different types of users for this web application: 
+    + **Stakeholders**: Stakeholders include people who need to know the value they are getting from funding the research to happen on the ISS. They want to know the results found from the research, why it's beneficial, and why it matters. Stakeholders are different from the other two end users because these end users want to see the funding hard at work.These end users are most likely adults.  
+    + **Detailed End Users**: These users are already familiar with the ISS and what it is used for. These users want to use the application as a means of looking at specific experiments or to find particular details. These end users are different from the other two end users because they might not care as much about the financial aspect and want to go beyond a high level knowledge of the research done on the ISS. These end users are
+    + **High Level End Users**: These users are first time learners about the ISS and the research conducted on it. They are in need of a high level overview of why we are conducting research on the ISS, how it helps us get to Mars, and why getting to Mars is important. Additionally, they want to know a little bit about the research being done - but not at a detailed level. These users are different from the other two users because they
 
-### 2.0 Assumptions and Dependencies 
+#### 2.2 User Documentation 
+User documentation can be found within the web application. //edit this once the product gets built and the user documentation gets made. 
 
-### 3.0 System Features
+### 3.0 Assumptions and Dependencies 
 
-#### 3.1 System Feature 1 
+### 4.0 Epics (System Features)
+
+#### 4.1 Epic 1 
 
 Story # | User Story                   | Acceptance Criteria      
 --------|------------------------------|------------------------------
