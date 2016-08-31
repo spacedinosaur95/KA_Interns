@@ -17,6 +17,7 @@ Date      | Version | Description       | Author
 ----------|---------|-------------------|----------------
 8/25/2016 | draft   | Establishing draft| Rebecca DeMarco 
 8/26/2016 | draft   | Editing draft     | Rebecca DeMarco 
+8/31/2016 | draft   | establishing v1.0 | Rebecca DeMarco 
 
 
 ### 1.0 Introduction 
@@ -46,7 +47,7 @@ This section of the User Story Specification document discusses aspects of the e
 
 #### 2.1 User Classes and Characteristics 
 * There are three different types of users for this web application: 
-    + **Stakeholders**: Stakeholders include people who need to know the value they are getting from funding the research to happen on the ISS. They want to know the results found from the research, why it's beneficial, and why it matters. Stakeholders are different from the other two end users because these end users want to see the funding hard at work.These end users are most likely adults.  
+    + **Administrators**: Administrators include people who need to know the value they are getting from funding the research to happen on the ISS. They want to know the results found from the research, why it's beneficial, and why it matters. Administrators are different from the other two end users because these end users want to see the funding hard at work and be able to report to Congress. 
     + **Detailed End Users**: These users are already familiar with the ISS and what it is used for. These users want to use the application as a means of looking at specific experiments or to find particular details. These end users are different from the other two end users because they might not care as much about the financial aspect and want to go beyond a high level knowledge of the research done on the ISS. These end users are
     + **High Level End Users**: These users are first time learners about the ISS and the research conducted on it. They are in need of a high level overview of why we are conducting research on the ISS, how it helps us get to Mars, and why getting to Mars is important. Additionally, they want to know a little bit about the research being done - but not at a detailed level. These users are different from the other two users because they
 
@@ -55,10 +56,47 @@ User documentation can be found within the web application. //edit this once the
 
 ### 3.0 Assumptions and Dependencies 
 
-### 4.0 Epics (System Features)
+### 4.0 Epics 
 
-#### 4.1 Epic 1 
+#### 4.1 Data Visualization 
 
 Story # | User Story                   | Acceptance Criteria      
 --------|------------------------------|------------------------------
-abc     | abc                          | abc 
+SPACE-4   | As a developer, I want to embed a Neo4j database into a shiny app so that I can figure out how to do data visualization.| Code is created, tested, and documented that embeds a Neo4j database into a shiny app
+SPACE-16|As an exploratory user, I want to visualize PIs and experiments so that I can see similar work that has been done.|no ac yet
+SPACE-17|As an exploratory user, I want to visualize the data set so that I can see the different categories of experiments|no ac yet
+SPACE-18|As an exploratory user, I want to visualize topics so that I can see the correlation| no ac yet
+SPACE-19|As an exploratory user, I want to visualize the PI/institutions that sponsored the experiment so that I can see where the different sponsors are from|End user can visualize where the sponsors are from by looking at a map
+SPACE-20|As an exploratory user, I want a mechanism to see the connections between experiments so that I can cross reference/see how data is related|no ac yet 
+SPACE-21|As an exploratory user, I want to visualize topics so that I can see the experiments in those topics|no ac yet
+SPACE-24|As an exploratory user, I want to be able to print data visualizations so that I can share with others.| no ac yet
+
+#### 4.2 Creating Reports 
+
+Story # | User Story                   | Acceptance Criteria      
+--------|------------------------------|------------------------------
+SPACE-25|As a standard user, I want to quickly find an existing experiment so that I can print experiment details|no ac yet 
+SPACE-26|As an administrator, I want to see how these experiments support our Journey to Mars so that I can report to Congress| no ac yet
+SPACE-27|As an administrator, I want to print out a report with the collaboration with agencies so that I can report within my organization.| no ac yet
+
+#### 4.3 Getting Research Details 
+
+Story # | User Story                   | Acceptance Criteria      
+--------|------------------------------|------------------------------
+SPACE-22|As an exploratory user, I want to be able to read about the experiments so that I can be more informed about the research|no ac yet
+SPACE-23| As a standard user, I want to quickly find an existing experiment so that I can read experiment details|no ac yet 
+
+
+#### 4.4 User Centered Design  
+
+Story # | User Story                | Acceptance Criteria 
+--------|---------------------------|-------------------------------
+SPACE-1 | As a developer, I want to map user stories to a UI so that I can establish a design that satisfies the appropriate user stories| An initial design is created and documented. Additional documentation and diagrams that point out which user stories are satisfied and needed to be satisfied are documented as well. 
+SPACE-2 | As a developer, I want to evaluate and redesign the initial UI so that human factors principles are considered.| A revision of the design is made through the use of human factors principles and documented 
+SPACE-3 | As a developer, I want to evaluate my design using human factors methods so that the UI will have a better UCD.| HF methods to be used and documented: HTA, TAFEI, Link Analysis, and Nielsen Heuristic Analysis
+
+#### 4.5 Uncategorized User Stories 
+Story #  | User Story                | Acceptance Criteria 
+---------|---------------------------|-------------------------------
+SPACE-14 | As an exploratory user, I want to see the impact of the ISS experiments on the map of science (research) so that I can understand how meaningful the research findings are. 
+SPACE-15 |As an exploratory user, I want to see the citation impact so that I can see how many times publications of the experiment have been referenced.|no ac yet 
