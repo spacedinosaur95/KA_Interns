@@ -1,0 +1,199 @@
+---
+title: "ISS Data Visualization Project User Story Specification Document"
+author: "Rebecca DeMarco"
+date: "December 1, 2016"
+output: html_document
+---
+
+### Revision History 
+Date      | Version | Description       | Author 
+----------|---------|-------------------|----------------
+8/25/2016 | draft   | Establishing draft| Rebecca DeMarco 
+12/1/2016 | v1.0  | submission of final deliverable | Rebecca DeMarco 
+
+
+## 1.0 Introduction 
+
+### 1.1 Purpose
+The purpose of the web application is for end users to explore and visualize the experiments conducted on International Space Station. The application will utilize data visualization.
+
+* The web application will communicate to end users: 
+    + The benefits of the research done on the ISS 
+    + Why the research on the ISS is necessary for the journey to Mars 
+    + Why sending humans to Mars is important 
+
+### 1.2 Product Perspective 
+This product is built upon the work of an already existing project. During summer 2016 scripts were made to scrape and store data from the internet. Most of the project documentation was produced during fall 2016, as well as the R shiny framework for the user interface design. 
+
+### 1.3 Document Conventions 
+Section 2 discusses the types of users that will be using the product and documentation that will be provided to help them. In section 3, assumptions and dependencies that influence the functionality needed are discussed. 
+
+All of the user stories may be found in section 4 of this document. Each user story has a unique label. The label format for user stories is IDVP-(user story number).(epic number)(letter within the epic). IDVP stands for ISS Data Visualization Project. There are currently 50 user stories. So, for example, if a new user story were written, the first number would be 51. If it were in the first epic, then it would be labeled as "IDVP-51.1d", since there are already three user stories written in epic 1.  
+
+### 1.4 Intended Audience 
+This User Story Specification Document is intended for future interns working on this project such that they can read this document and understand the functionality that needs to be built. 
+
+## 2.0 End Users 
+This section of the User Story Specification document discusses aspects of the end users. This is so the reader can gain context of for whom the web application is being designed for.  
+
+### 2.1 User Classes and Characteristics 
+* There are three different types of users for this web application. All end users will be using the same iteration of the web application, however the functionality needed for this application was determined by thinking aboutthese three groups of users in mind:   
+    + **Administrators**: Administrators include people who need to know the value they are getting from funding the research to happen on the ISS. They want to know the results found from the research, why it's beneficial, and why it matters. Administrators are different from the other two end users because these end users want to see the funding hard at work and be able to report to Congress. 
+    + **Detailed End Users**: These users are already familiar with the ISS and what it is used for. These users want to use the application as a means of looking at specific experiments or to find particular details. These end users are different from the other two end users because they might not care as much about the financial aspect and want to go beyond a high level knowledge of the research done on the ISS. These end users are
+    + **High Level End Users**: These users are first time learners about the ISS and the research conducted on it. They are in need of a high level overview of why we are conducting research on the ISS, how it helps us get to Mars, and why getting to Mars is important. Additionally, they want to know a little bit about the research being done - but not at a detailed level. These users are different from the other two users because they
+
+### 2.2 User Documentation 
+User documentation can be found within the web application. (edit this once the product gets built and the user documentation gets made)
+
+## 3.0 Assumptions, Dependencies, and Design Constraints  
+**Specific Technologies, Tools, and Databases Used** 
+
+* MongoDB
+    + The initial Python script that was made scraped the internet for text and stored it in MongoDB 
+    
+* Neo4j 
+    + This is the graph database that we use
+    
+* shiny, shiny dashboard
+    + the packages used to make the application in R 
+
+**Language Requirements**
+
+* R Statistical Programing Language 
+    + product owner requirement, primary language for developing the user interface 
+    
+* Python 
+    + used to scrape the internet for data 
+    
+**Third-Party or Commercial Components Depended Upon** 
+
+* RStudio 
+    + IDE used for developing R scripts 
+    
+* The CKO's RStudio Connect Server 
+    + Server where the final product will be deployed 
+
+**Issues Around the Development or Operating Environment** 
+
+* As of 12/1/2016 there are no known issues 
+* Previous issues involved packages for R being depreciated 
+
+**Dependencies on External Factors** 
+
+* The successful completion of this project is dependent Neo4j being embedded into the shiny application 
+* Once fully built, the project is dependent on the packages used not being depreciated - or if they are depreciated that new packages can be found and the script can be fixed 
+
+## 4.0 Epics 
+### Epic 1: Printing off Items from App 
+* **IDVP-1.1a**   *User Story*: As a user, I want to print a data visualization so that I can have a copy of the data visualization. 
+    + *Acceptance Criteria*: User can print the data visualization they want from the interface the data visualization is in. 
+* **IDVP-2.1b**   *User Story*: As a user, I want to print details about an experiment so that I can have a copy of the experiment details. 
+    + *Acceptance Criteria*: User can print the experiment details from the interface of which they are viewing experiment details. 
+* **IDVP-3.1c**   *User Story*: As a user, I want to print the reports and documentation so that I can have a copy of documentation made available to me. 
+    + *Acceptance Criteria*: User can print the individual document that they are currently viewing from the interface of which they are viewing. 
+    
+### Epic 2: Access Experiment Information 
+* **IDVP-4.2a**  *User Story*: As a user, I want to access a list of experiments sorted by their topic so that I can find an experiment according to the topic I am interested in. 
+    + *Acceptance Criteria*: User sees a list of all of the topics, alphabetized, and can click on a topic to see a list of experiments tagged with that topic. 
+* **IDVP-5.2b**  *User Story*: As a user, I want to select a unique list of experiments by topic and refine the list experiments shown by principle investigator and sponsoring agency.
+    + *Acceptance Criteria*: From the list of experiments for a specific topic, the user filters out experiments by sponsoring agency and principle investigator. 
+* **IDVP-6.2c**  *User Story*: As a user, I want to sort a unique list of experiments by topic that has been refined by principle investigator and sponsoring agency so that I can see the experiments by mission. 
+    + *Acceptance Criteria*: After the list of experiments for a specific topic has already been filtered by principle investigators and sponsoring agency, the list of experiments is then presented by showing a list of the experiments according to which mission increment it was conducted on. 
+* **IDVP-7.2d**  *User Story*: As a user, after I have refined my search by topic and am presented the experiments by mission increment, I want to click on each mission increment so that I can read about the experiments that happened on each mission increment. 
+    + *Acceptance Criteria*: User selects which mission increment they want to view and can go to experiment details for the for the mission increments they selected. 
+* **IDVP-8.2e**  *User Story*: As a user, after I am viewing my search by topic results, I want to go back and modify my search so that I can find different results. 
+    + *Acceptance Criteria*: User can go to the search interface with their inputs from the search results 
+* **IDVP-9.2f**  *User Story*: As a user, I want to access a list of experiments sorted by their category so that I can find an experiment according to the category I am interested in. 
+    + *Acceptance Criteria*: User sees a list of all of the categories, alphabetized, and can click on a topic to see a list of experiments tagged with that topic.
+* **IDVP-10.2g**   *User Story*: As a user, I want to select a unique list of experiments by category and refine the list of experiments shown by principle investigator and sponsoring agency. 
+    + *Acceptance Criteria*: From the list of experiments for a category, the user filters out experiments by sponsoring agency and principle investigator.
+* **IDVP-11.2h**  *User Story*: As a user, I want to sort a unique list of experiments by category that has been refined by principle investigator and sponsoring agency so that I can see the experiments by mission. 
+    + *Acceptance Criteria*: After the list of experiments for a specific category has already been filtered by principle investigators and sponsoring agency, the list of experiments is then presented by showing a list of the experiments according to which mission increment it was conducted on. 
+* **IDVP-12.2i**  *User Story*: As a user, after I have refined my search by category and am presented the experiments by mission increment, I want to click on each mission increment so that I can read about the experiments that happened on each mission increment. 
+    + *Acceptance Criteria*: User selects which mission increment they want to view and can go to experiment details for the for the mission increments they selected. 
+* **IDVP-13.2j**  *User Story*: As a user, after I am viewing my search by category results, I want to go back and modify my search so that I can find different results.
+    + *Acceptance Criteria*: User can go to the search interface with their inputs from the search results 
+
+### Epic 3: Visualize Sponsoring Agencies and Geographical Location 
+* **IDVP-14.3a**  *User Story*: As a user, I want to see all of the sponsoring agencies so that I can see visually see their geographical location. 
+    + *Acceptance Criteria*: A map with indicators of where all the sponsoring agencies are is presented from the appropriate user interface. 
+* **IDVP-15.3b**  *User Story*: As a user, I want to see the research that each sponsoring agency has conducted so that I can read about the experiments that agency has sponsored.
+    + *Acceptance Criteria*: User accesses experiment details given what the sponsoring agency is. 
+* **IDVP-16.3c**  *User Story*: As a user, I want to find trends in geographic location and research topic so that I can see if a particular topic or category is researched more often in a particular location. 
+    + *Acceptance Criteria*: Experiments are indicated on a map depicted by topic and category. 
+
+### Epic 4: Visualize Impact on Research 
+* **IDVP-17.4a**  *User Story*: As a user, I want to visualize the network of principle investigators so that I can gain a high level overview of what research is being done by who. 
+    + *Acceptance Criteria*: A data visualization is made to depict the network of principle investigators using principle investigators and topics as the parameters for the relationships. 
+* **IDVP-18.4b**  *User Story*: As a user, I want to find a principle investigator given a range of H-indexes so that I can find a principle investigator in respect to the impact they have on research. 
+    + *Acceptance Criteria*: User finds principle investigators by giving the input of H-index ranges. 
+* **IDVP-19.4c**  *User Story*: As a user, I want to read about experiments by principle investigators that are within a range of H-indexes so that I can read about experiments that have a particular amount of impact in research. 
+    + *Acceptance Criteria*: User finds experiments to read about by giving the input of principle investigators with a particular H-index. 
+* **IDVP-20.4d**  *User Story*: As a user, I want to visually find principle investigators with similar H-indexes so that I can see the level of which principle investigators are contributing to research. 
+    + *Acceptance Criteria*: A data visualization that depicts the network of principle investigators using principle investigators and H-index as the parameters for the relationships is accessed through the appropriate user interface. 
+* **IDVP-21.4e**  *User Story*: As a user, when I am reading experiment details, I want to find experiment publication with similar citation counts so that I can find experiments with similar impact. 
+    + *Acceptance Criteria*: When reading about experiment details, the user is presented suggestions of other experiments that have publications with similar citation counts. 
+* **IDVP-22.4f**  *User Story*: As a user, I want to visualize the network of experiments in relation to the amount of citations each experiment has so that I can see which experiments are referenced the most in research. 
+    + *Acceptance Criteria*: A data visualization that depicts the network of experiments using experiments and the amount of citations as the parameters for the relationships is accessed through the appropriate user interface.
+* **IDVP-23.4g**  *User Story*: As a user, I want to find the principle investigators that have the most impact so that I can read about their experiments. 
+    + *Acceptance Criteria*: Users are presented the experiment details of principle investigators of the given H-index range. 
+
+### Epic 5: Compare, Cross Reference, and Relate Data 
+* **IDVP-24.5a**  *User Story*: As a user, I want a mechanism to select different research topics so that I can cross reference how similar research relates to one and other. 
+    + *Acceptance Criteria*: User can select different research topics as input and the output is a cross reference or comparison of the items selected. 
+* **IDVP-25.5b**  *User Story*: As a user, I want a mechanism to select different geographical locations so that I can compare research that is being done in different places in the world. 
+    + *Acceptance Criteria* User can select different geographical locations as input and the output is a cross reference of comparison of the items selected. 
+* **IDVP-26.5c**  *User Story*: As a user, I want a mechanism to select different sponsoring agencies so that I can compare research done by different agencies. 
+    + *Acceptance Criteria*: User can select different agencies as input and the output is a comparison of the research that the different agencies conduct. 
+* **IDVP-27.5d**  *User Story*: As a user, I want to see research with similar citation indexes in regards to the research experiment I am reading about so that I can see articles that have similar impact on research. 
+    + *Acceptance Criteria*: When a user is reading experiment details they are also presented information on experiments that have similar citation indexes. 
+* **IDVP-28.5e**  *User Story*: As a user, I want to see experiments conducted by the same sponsoring agency so that when I am reading about an experiment I can read about related content. 
+    + *Acceptance Criteria*: When a user is reading experiment details they are also presented information on experiments conducted by the same agency. 
+* **IDVP-29.5f**  *User Story*: As a user, I want to see experiments in related topics so that when I am reading about an experiment I can read about research related to the topic that I am reading about. 
+    + *Acceptance Criteria*: When a user is reading experiment details, they are also presented information on experiments with similar topics. 
+* **IDVP-30.5g**  *User Story*: As a user, I want to visualize how categories are related so that I can have a high level overview of what research has been done. 
+    + *Acceptance Criteria*: A data visualization is made to depict how all the categories are related as a system. 
+* **IDVP-31.5h**  *User Story*: As a user, I want to see topics that are similar to a topic that I am interested in so that I can see research related to what I am interested in. 
+    + *Acceptance Criteria*: User inputs a topic they are interested in and the output is a visualization that shows the relationships between their interested topic and the topics relating to their interested topic. 
+* **IDVP-32.5i**  *User Story*: As a user, I want to visualize topics so that I can see how all of the research topics are related to one another. 
+    + *Acceptance Criteria*: A data visualization is made to depict how all the topics are related as a system. 
+
+### Epic 6: Journey to Mars 
+* **IDVP-33.6a**  *User Story*: As a user, I want a visualization on how the ISS supports our Journey to Mars so that I can understand how the ISS helps us get to Mars.
+    + *Acceptance Criteria*: A high level visualization is made to explain the ISS in the context of the Journey to Mars and can be viewed from a part of the web interface that discusses Journey to Mars. 
+* **IDVP-34.6b**  *User Story*: As a user, I want to visualize all of the experiments conducted on the ISS that contribute to research needed to get to Mars so that I can understand how research on the ISS will help us get to Mars. 
+    + *Acceptance Criteria*: A visualization is accessed from the appropriate user interface that depicts the research experiments that help us get to Mars
+* **IDVP-35.6c**  *User Story*: As a user, I want to visualize the topics of the research being conducted on the ISS so that I can see the research being done in each topic to support the Journey to Mars. 
+    + *Acceptance Criteria* A visualization of topics is accessed from the appropriate user interface that depicts the research experiments that help us get to Mars
+* **IDVP-36.6d**  *User Story*: As a user, I want to visualize experiments by categories so that I can understand the research being done in each category to support the Journey to Mars. 
+    + *Acceptance Criteria*: A visualization of categories is accessed from the appropriate user interface that depicts the research experiments that help us get to Mars
+    
+### Epic 7: Reports/End User Documentation 
+* **IDVP-37.7a**  *User Story*: As a user, I want a report on the relation between principle investigators and experiments so that I can read about what the data visualization means in one cohesive document. 
+    + *Acceptance Criteria*: A report on the relation between principle investigators and experiments is written. 
+* **IDVP-38.7b**  *User Story*: As a user, I want to view the report on the relation between principle investigators and experiments so that I read about what the data visualization means through the web application interface. 
+    + *Acceptance Criteria*: The user views the report that was written on the relation between principle investigators and experiments from the appropriate user interface. 
+* **IDVP-39.7c**  *User Story*: As a user, I want a report on data visualization of topics meaning so that I can read about it in one cohesive document. 
+    + *Acceptance Criteria*: A report on what the data visualization of topics means is written. 
+* **IDVP-40.7d**  *User Story*: As a user, I want to view the report on what the data visualization of topics means so that I can read about what can be inferred from the data visualization of topics through the web application interface. 
+    + *Acceptance Criteria*: The user views the report that was written on the meaning of the data visualization topics from the appropriate user interface. 
+* **IDVP-41.7e**  *User Story*: As a user, I want a report on the meaning of data visualization of categories meaning so that I can read about it in one cohesive document. 
+    + *Acceptance Criteria*: A report on what the data visualization of categories means is written. 
+* **IDVP-42.7f**  *User Story*: As a user, I want to view the report on what the data visualization of categories means so that I can read about what can be inferred from the data visualization of categories through the web application interface. 
+    + *Acceptance Criteria*: The user views the report that was written on the meaning of the data visualization on categories from the appropriate user interface. 
+* **IDVP-43.7g**  *User Story*: As a user, I want a report on the meaning of data visualization of sponsoring agencies so that I can read about it in one cohesive document. 
+    + *Acceptance Criteria*: A report on what the data visualization of sponsoring agencies means is written. 
+* **IDVP-44.7h**  *User Story*: As a user, I want to view the report on what the data visualization of sponsoring agencies means so that I can read about what can be inferred from the data visualization of sponsoring agencies through the web application interface. 
+    + *Acceptance Criteria*: The user views the report that was written on the meaning of the data visualization on the sponsoring agencies from the appropriate user interface. 
+* **IDVP-45.7i**  *User Story*: As a user, I want a report on the meaning of data visualization of impact on research so that I can read about it in one cohesive document. 
+    + *Acceptance Criteria*: A report on what the data visualization of impact on research means. 
+* **IDVP-46.7j**  *User Story*: As a user, I want to view the report on what the data visualization of impact on research means so that I can read about what can be inferred from the data visualization of impact on research through the web application interface. 
+    + *Acceptance Criteria*: The user views the report that was written on the meaning of the data visualization on the impact on research from the appropriate user interface. 
+* **IDVP-47.7k**  *User Story*: As a user, I want a report on the ISS research experiments in context of the Journey to Mars so that I can read about it. 
+    + *Acceptance Criteria*: A report on what the experiments mean in relation to the Journey to Mars is written 
+* **IDVP-48.7l**  *User Story*: As a user, I want to view the report on the ISS research experiments in context of the Journey to Mars so that I can read about it through the web application interface. 
+    + *Acceptance Criteria*: The user views the report that was written on the ISS research experiments in context of the Journey to Mars from the appropriate user interface. 
+* **IDVP-49.7m**  *User Story*: As a user, I want a document on how to use the web application so that I can understand the intended use of the application. 
+    + *Acceptance Criteria*: A how-to user guide is made for the web application 
+* **IDVP-50.7n**  *User Story*: As a user, I want to view the document on how to use the web application so that I can read it through the web application interface. 
+    + i. Acceptance Criteria: The user views the document that was written on how to use the web application from the appropriate user interface. 
