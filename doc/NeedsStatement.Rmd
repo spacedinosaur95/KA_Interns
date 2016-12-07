@@ -1,0 +1,26 @@
+---
+title: "ISS Data Visualization Project Needs Statement"
+author: "Rebecca DeMarco"
+date: "November 7, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Needs Statement 
+
+The Knowledge Management Group at Johnson Space Center has a data science initiative to find meaningful pieces of knowledge from various JSC data. The International Space Station Data Visualization Project is a current effort to visualize aspects of all of the experiments conducted on the ISS. The project aims to let end users explore the experiments that have been conducted on the ISS through the means of data visualization. The end product is a web application with a front end that is developed with the shiny and shiny dashboard packages in R. 
+
+
+The web application has several features to provide to end users. The primary targeted end users for this product are exploratory end users, meaning they are using the web application to learn more about the ISS and the experiments conducted on it. The secondary audiences are standard end users and administrator end users. Standard users are familiar with the ISS and the experiments conducted on it and are looking to use the web application to learn more about specific research. Administrator end users are very familiar with the ISS and the experiments conducted on it and are looking to report to Congress on the value the ISS brings us. 
+
+
+The majority of the features are focused on the primary target audiences, but there are some features that are intended to be heavily used by all types of end users. These features include easily printing off a chart or graph, easily accessing information about a particular experiment, and printing off a report to share with others. 
+
+
+Most features of the web application are focused on exploratory users because the application is mostly for exploring data. There are four things that need visualized are principle investigators and experiments, topics, categories, and sponsoring agencies. Another feature that may also entail data visualization is creating a mechanism to see the impact of the ISS experiments on the map of science. PIs and experiments need to be visualized so that the end user can visually see similar work that has been done throughout the network of researchers. Topics need to be visualized so that the end user can see how research topics are related and see which topics are similar to their interest. Categories need to be visualized so the end user can explore the dataset. The sponsoring agencies need to be visualized so the end user can see the types of experiments that come from different sponsors. Additional features for exploratory users include letting the user see the impact of the ISS experiments on the map of research, see the citation impact, and a mechanism to cross reference data.  
+
+
+Features for the standard user are also guided towards repeat users of the web application, however they are useful to all of the end users. These features include the end user quickly finding an existing experiment so that they can read about experiment details and being able to print out details about that experiment.  Features for an administrator end users are also useful to all of the end users. 
