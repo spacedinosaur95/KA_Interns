@@ -1,0 +1,53 @@
+---
+title: "Design Specification Document"
+author: "Rebecca DeMarco"
+date: "December 8, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Revision History 
+Date      | Version | Description       | Author 
+----------|---------|-------------------|----------------
+8/25/2016 | draft   | Establishing draft| Rebecca DeMarco 
+12/08/2016 | v1.0   | submitting final deliverable | Rebecca DeMarco 
+
+### 1.0 Introduction 
+
+#### 1.1 Purpose of Document 
+This document exists so that project stakeholders will understand the design, and the decisions that lead to the design, of the application user interface, system architecture, and technical environment. 
+
+#### 1.2 Scope of the Development Project 
+
+**Scope for Fall 2016** 
+The scope for fall 2016 was to determine the project needs and start development on a prototype. Most of the design decisions that were made were either user interface design decisions or decisions made by the technical POC for the project, such as the tools used for the project. 
+
+### 2.0 System Architecture 
+//block diagram that shows all the major components of the system 
+//narrative discussing architecture 
+
+The system architecture is not complete as a product was not fully developed. The next project member will need to update this section once the architecture is fully built. The system architecture should show how Neo4j will be embedded into the system. The architecture will most likely include: 
+* How Python was used to scrape the internet 
+* The MongoDB database 
+* The Neo4j database
+* How Neo4j got embedded into R so the database doesn't have to be spinning to run the R shiny application 
+* How the R application is deployed on the server
+
+### 3.0 Technical Environment 
+
+All R scripting was developed using RStudio. RStudio was selected as the IDE for R since it is the leading IDE that was designed for R. When the shiny application was ran to test to see if it had worked, the default is to run in the RStudio viewer. If you run in browser, it will default to Internet Explorer. If [Font Awesome icons](http://fontawesome.io/icons/) are used they will sometimes not be displayed when using Internet Explorer. Additionally, some other things in the R application will generally not work in Internet Explorer. If running in the browser, the application typically functions normally using Google Chrome. 
+
+### 4.0 Software Design 
+
+**Design Details for R Scripts**
+
+
+
+//When this documentation is updated in the spring semester, consider adding sequence diagrams and discussing the database design. 
+
+### 5.0 User Interface Design 
+
+#### 5.1 Iteration 1 - Initial Design and Prototyping 
